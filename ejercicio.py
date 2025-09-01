@@ -19,6 +19,8 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 
 class Ventana(QWidget):
     def __init__(self):
@@ -27,10 +29,20 @@ class Ventana(QWidget):
         self.setGeometry(100, 100, 400, 300)
         layout = QGridLayout()
         self.setLayout(layout)
+        titulo = QLabel("Formulario de Registro")
+        fuente = QFont()
+        fuente.setFamily("Arial")
+        fuente.setPointSize(16)
+        fuente.setBold(True)
 
-        # COMPLETAR: Crear QLabel grande y centrado ("Formulario de Registro")
-        # COMPLETAR: Crear QLabel "Nombre:" y QLineEdit al lado
-        # layout.addWidget(...)
+        titulo.setFont(fuente)
+        titulo.setAlignment(Qt.AlignCenter)
+        layout.addWidget(titulo, 0,0,1,2)
+        label_nombre = QLabel("Nombre: ")
+        self.txt_nombre = QLineEdit()
+        layout.addWidget(label_nombre, 1, 0)
+        layout.addWidget(self.txt_nombre, 1, 1)
+       
 
 # -----------------------------------------------------------------------------
 # Ejercicio 2: Más campos de texto
