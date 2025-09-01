@@ -18,7 +18,7 @@
 # - QLabel “Nombre:” y QLineEdit al lado, usando QGridLayout.
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton, QComboBox
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton, QComboBox, QCheckBox
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
@@ -74,17 +74,12 @@ class Ventana(QWidget):
         layout.addWidget(label_pais, 6, 0)
         layout.addWidget(self.combo_pais, 6, 1)
 
+        self.chk_terminos = QCheckBox("Acepto los términos y condiciones")
+        layout.addWidget(self.chk_terminos, 7, 0, 1, 2)
 
 
 
-# -----------------------------------------------------------------------------
-# Ejercicio 5: Checkbox de términos
-# -----------------------------------------------------------------------------
-# Teoría:
-# - QCheckBox permite aceptar o rechazar condiciones.
-#
-# Consigna:
-# - Agregar QCheckBox: “Acepto los términos y condiciones”.
+
 
 # -----------------------------------------------------------------------------
 # Ejercicio 6: Botón de envío y validación
