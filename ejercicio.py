@@ -18,7 +18,7 @@
 # - QLabel “Nombre:” y QLineEdit al lado, usando QGridLayout.
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton, QComboBox, QCheckBox
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton, QComboBox, QCheckBox, QPushButton, QMessageBox
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
@@ -77,21 +77,15 @@ class Ventana(QWidget):
         self.chk_terminos = QCheckBox("Acepto los términos y condiciones")
         layout.addWidget(self.chk_terminos, 7, 0, 1, 2)
 
+        btn_registrar = QPushButton("Registrarse")
+        btn_registrar.clicked.connect(self.registrar)
+        layout.addWidget(btn_registrar, 8, 0, 1, 2)
+        
 
 
 
 
-# -----------------------------------------------------------------------------
-# Ejercicio 6: Botón de envío y validación
-# -----------------------------------------------------------------------------
-# Teoría:
-# - QPushButton ejecuta una función al hacer clic.
-# - QMessageBox muestra mensajes emergentes.
-#
-# Consigna:
-# - Agregar QPushButton “Registrarse”.
-# - Al hacer clic, validar que todos los campos estén completos y el checkbox marcado.
-# - Mostrar mensaje de éxito o error.
+
 
 # -----------------------------------------------------------------------------
 # Ejercicio 7: Personalización visual
@@ -99,7 +93,23 @@ class Ventana(QWidget):
 # Consigna:
 # - Cambiar colores de fondo, fuentes y tamaño de los widgets.
 # - Centrar el formulario en la ventana.
+# Función de validación
+    def registrar(self):
+        nombre = self.txt_nombre.text().strip()
+        email = self.txt_email.text().strip()
+        password = self.txt_pass.text().strip()
+        genero = None
+        if self.radio_m.isChecked():
+            genero = "Masculino"
+        elif self.radio_f.isChecked():
+            genero = "Femenino"
+        pais = self.combo_pais.currentText()
+        terminos = self.chk_terminos.isChecked()
 
+        if not nombre or not email or not password or genero is None or not terminos:
+            QMessageBox.warning(self, "Error", "Por favor completa todos los campos y acepta los términos.")
+        else:
+            QMessageBox.information(self, "Éxito", f"Usuario {nombre} registrado correctamente.")
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ventana = Ventana()
