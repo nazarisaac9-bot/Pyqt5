@@ -42,18 +42,19 @@ class Ventana(QWidget):
         self.txt_nombre = QLineEdit()
         layout.addWidget(label_nombre, 1, 0)
         layout.addWidget(self.txt_nombre, 1, 1)
-       
 
-# -----------------------------------------------------------------------------
-# Ejercicio 2: Más campos de texto
-# -----------------------------------------------------------------------------
-# Teoría:
-# - QLineEdit puede usarse para email y contraseña.
-# - setEchoMode(QLineEdit.Password) oculta el texto del input.
-#
-# Consigna:
-# - Agregar debajo los campos “Email:” y “Contraseña:” (QLabel + QLineEdit).
-# - El campo contraseña debe ocultar el texto.
+        label_email = QLabel("Email:")
+        self.txt_email = QLineEdit()
+        layout.addWidget(label_email, 2, 0)
+        layout.addWidget(self.txt_email, 2, 1)
+
+        lbl_pass = QLabel("Contraseña:")
+        self.txt_pass = QLineEdit()
+        self.txt_pass.setEchoMode(QLineEdit.Password)
+        layout.addWidget(lbl_pass, 3, 0)
+        layout.addWidget(self.txt_pass, 3, 1)
+
+
 
 # -----------------------------------------------------------------------------
 # Ejercicio 3: Selección de género
