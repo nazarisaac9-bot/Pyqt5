@@ -18,7 +18,7 @@
 # - QLabel “Nombre:” y QLineEdit al lado, usando QGridLayout.
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
@@ -54,18 +54,19 @@ class Ventana(QWidget):
         layout.addWidget(lbl_pass, 3, 0)
         layout.addWidget(self.txt_pass, 3, 1)
 
+        label_genero = QLabel("Género:")
+        self.radio_m = QRadioButton("Masculino")
+        self.radio_f = QRadioButton("Femenino")
+
+        self.grupo_genero = QButtonGroup()
+        self.grupo_genero.addButton(self.radio_m)
+        self.grupo_genero.addButton(self.radio_f)
+
+        layout.addWidget(label_genero, 4, 0)
+        layout.addWidget(self.radio_m, 4, 1)
+        layout.addWidget(self.radio_f, 5, 1)
 
 
-# -----------------------------------------------------------------------------
-# Ejercicio 3: Selección de género
-# -----------------------------------------------------------------------------
-# Teoría:
-# - QRadioButton permite seleccionar una opción.
-# - QButtonGroup agrupa los radio buttons para que solo uno esté activo.
-#
-# Consigna:
-# - Agregar dos QRadioButton: “Masculino” y “Femenino”, en la misma fila.
-# - Usar QButtonGroup para agruparlos.
 
 # -----------------------------------------------------------------------------
 # Ejercicio 4: Selección de país
