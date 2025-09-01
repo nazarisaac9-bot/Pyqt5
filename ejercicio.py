@@ -18,7 +18,7 @@
 # - QLabel “Nombre:” y QLineEdit al lado, usando QGridLayout.
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton, QComboBox
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 
@@ -66,16 +66,16 @@ class Ventana(QWidget):
         layout.addWidget(self.radio_m, 4, 1)
         layout.addWidget(self.radio_f, 5, 1)
 
+        label_pais = QLabel("País:")
+        self.combo_pais = QComboBox()
+        self.combo_pais.addItems(
+            ["Argentina", "Chile", "Uruguay", "México", "España"]
+        )
+        layout.addWidget(label_pais, 6, 0)
+        layout.addWidget(self.combo_pais, 6, 1)
 
 
-# -----------------------------------------------------------------------------
-# Ejercicio 4: Selección de país
-# -----------------------------------------------------------------------------
-# Teoría:
-# - QComboBox permite elegir una opción de una lista desplegable.
-#
-# Consigna:
-# - Agregar QLabel “País:” y QComboBox con al menos 5 países.
+
 
 # -----------------------------------------------------------------------------
 # Ejercicio 5: Checkbox de términos
