@@ -81,19 +81,30 @@ class Ventana(QWidget):
         btn_registrar.clicked.connect(self.registrar)
         layout.addWidget(btn_registrar, 8, 0, 1, 2)
         
+        self.setStyleSheet("""
+            QWidget {
+                background-color: #f4f4f9;
+            }
+            QLabel {
+                font-size: 14px;
+            }
+            QLineEdit, QComboBox {
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                font-weight: bold;
+                padding: 8px;
+                border-radius: 8px;
+            }
+            QPushButton:hover {
+                background-color: #45a049;
+            }
+        """)
 
-
-
-
-
-
-# -----------------------------------------------------------------------------
-# Ejercicio 7: Personalización visual
-# -----------------------------------------------------------------------------
-# Consigna:
-# - Cambiar colores de fondo, fuentes y tamaño de los widgets.
-# - Centrar el formulario en la ventana.
-# Función de validación
     def registrar(self):
         nombre = self.txt_nombre.text().strip()
         email = self.txt_email.text().strip()
