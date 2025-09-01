@@ -1,22 +1,3 @@
-# Práctico PyQt5: Construcción guiada de una interfaz completa
-# ------------------------------------------------------------
-#
-# Objetivo: Construir paso a paso un formulario de registro moderno y funcional.
-# Cada ejercicio suma widgets y lógica, guiando al alumno en el uso de PyQt5 y QGridLayout.
-#
-# -----------------------------------------------------------------------------
-# Ejercicio 1: Estructura básica y primer campo
-# -----------------------------------------------------------------------------
-# Teoría:
-# - QLabel muestra texto en la interfaz.
-# - QLineEdit permite ingresar texto.
-# - QGridLayout organiza los widgets en filas y columnas.
-#
-# Consigna:
-# - Ventana 400x300, título “Registro de Usuario”.
-# - QLabel grande y centrado: “Formulario de Registro”.
-# - QLabel “Nombre:” y QLineEdit al lado, usando QGridLayout.
-
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QGridLayout, QButtonGroup, QRadioButton, QComboBox, QCheckBox, QPushButton, QMessageBox
 from PyQt5.QtGui import QFont
